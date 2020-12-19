@@ -1,5 +1,11 @@
 <img src="https://user-images.githubusercontent.com/114015/102681443-696fde80-418f-11eb-8863-0e668e240b40.png" width="400px">
 
+[![GitHub Release](https://img.shields.io/github/release/thiagodnf/disposable-clipboard.svg)](https://github.com/thiagodnf/disposable-clipboard/releases/latest)
+[![GitHub contributors](https://img.shields.io/github/contributors/thiagodnf/disposable-clipboard.svg)](https://github.com/thiagodnf/disposable-clipboard/graphs/contributors)
+[![GitHub stars](https://img.shields.io/github/stars/thiagodnf/disposable-clipboard.svg)](https://github.com/almende/thiagodnf/disposable-clipboard)
+[![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
+[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
+
 ## For Developers
 
 To install the this project in your machine, please install all dependencies by using the following command:
