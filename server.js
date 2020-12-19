@@ -9,16 +9,17 @@ const createError = require('http-errors');
 
 const indexRoute = require("./src/routes/index.route");
 const clipboardRoute = require("./src/routes/clipboard.route");
+const clipboardService = require("./src/services/clipboard.service");
 const package = require('./package.json');
 
 const PORT = process.env.PORT || 3000;
+const REMOVE_EXPIRED = process.env.REMOVE_EXPIRED || 0.2 * 60000;
 
 const app = express();
 
 /**
  * Settings
  */
-
 // app.use(helmet({permittedCrossDomainPolicies: false}));
 app.use(cookieParser());
 app.use(morgan('dev'))
@@ -40,7 +41,6 @@ app.use(function(req, res, next){
  */
 app.use('/', indexRoute);
 app.use('/clipboard', clipboardRoute);
-
 
 /**
  * Catch 404 and forward to error handler
@@ -71,10 +71,7 @@ app.listen(PORT, () => {
 
     console.log('Running on port: %d', PORT);
 
-    const sec = 1000;
-    const min = 60 * sec;
-
     setInterval(function () {
-
-    }, 1 * min);
+        clipboardService.removeExpired();
+    }, REMOVE_EXPIRED);
 });

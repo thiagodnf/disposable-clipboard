@@ -1,7 +1,9 @@
+const generateQRCode = require('qrcode');
+const validator = require('validator');
+const url = require('url');
+
 const dateUtils = require('../utils/date.utils');
 const clipboardService = require("../services/clipboard.service");
-const generateQRCode = require('qrcode');
-const url = require('url');
 
 exports.create =  async function(req, res, next) {
 
@@ -10,6 +12,15 @@ exports.create =  async function(req, res, next) {
     const expiration = dateUtils.expirationTimes[expirationTime];
 
     const clipboard = clipboardService.save(content, expiration);
+
+    res.redirect(`/clipboard/success/${clipboard.id}`);
+};
+
+exports.success =  async function(req, res, next) {
+
+    const {clipboardId}  = req.params;
+
+    const clipboard = clipboardService.findById(clipboardId);
 
     var clipboardURL = url.format({
         protocol: req.protocol,
@@ -23,17 +34,20 @@ exports.create =  async function(req, res, next) {
         qrcode: qrcode,
         clipboardURL: clipboardURL
     });
-};
+}
 
 exports.view = function(req, res, next) {
 
     const {clipboardId} = req.params;
-    //http://localhost:3000/KOfW7f7cRh
 
+    const clipboard = clipboardService.findById(clipboardId);
 
-    console.log(clipboardId)
+    if (dateUtils.isExpired(clipboard)){
+        clipboardService.removeById(clipboardId);
+    }
 
-    res.render('clipboard.ejs',{
-        clipboard: "oi"
+    res.render('clipboard.ejs', {
+        content: validator.unescape(clipboard.content),
+        expiredAt: clipboard.expired_at
     });
 };

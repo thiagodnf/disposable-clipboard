@@ -1,6 +1,7 @@
 const createError = require('http-errors');
 const { body, param, validationResult } = require('express-validator');
 
+const clipboardService = require("../services/clipboard.service");
 const dateUtils = require('../utils/date.utils');
 
 exports.create = [
@@ -34,7 +35,6 @@ exports.create = [
     },
 ];
 
-
 exports.view = [
 
     param('clipboardId')
@@ -43,10 +43,11 @@ exports.view = [
         .not().isEmpty()
         .withMessage('clipboard id may not be empty')
         .bail()
-        .isLength({ min: 10})
-        .withMessage('clipboard id is not valid')
-        .bail()
-        ,
+        .custom(value => {
+            return clipboardService.findById(value) !== undefined;
+        })
+        .withMessage('clipboard not found')
+        .bail(),
 
     (req, res, next) => {
 

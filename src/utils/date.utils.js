@@ -1,3 +1,5 @@
+const dayjs = require('dayjs')
+
 exports.expirationTimes = {
     "0sec": {label: "Expire when viewed", amount: 0, unit: "second", selected: "selected" },
     "30sec": {label: "Expire in 30 seconds", amount: 30, unit: "second", selected: "" },
@@ -5,3 +7,15 @@ exports.expirationTimes = {
     "10min": {label: "Expire in 10 minutes", amount: 10, unit: "minute", selected: "" },
     "1hour": {label: "Expire in 1 Hour", amount: 1, unit: "hour", selected: "" }
 };
+
+exports.getExpiredAt = function(now = dayjs(), expiration) {
+    return now.add(expiration.amount, expiration.unit)
+}
+
+exports.isExpired = function (clipboard) {
+    return dayjs().isAfter(dayjs(clipboard.expired_at))
+}
+
+exports.now = function () {
+    return dayjs();
+}

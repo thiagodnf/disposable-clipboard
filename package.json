@@ -16,7 +16,11 @@
     "bugs": {
         "url": "https://github.com/thiagodnf/disposable-clipboard/issues"
     },
-    "keywords": ["clipboard", "disposable", "web-app"],
+    "keywords": [
+        "clipboard",
+        "disposable",
+        "web-app"
+    ],
     "author": "Thiago Ferreira",
     "license": "MIT",
     "homepage": "https://disposable-clipboard.herokuapp.com",
@@ -39,6 +43,7 @@
         "nanoid": "^3.1.20",
         "node-uuid": "^1.4.8",
         "qrcode": "^1.4.4",
+        "validator": "^13.5.2",
         "winston": "^3.3.3"
     }
 }

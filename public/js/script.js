@@ -1,6 +1,8 @@
-$(function(){
+$(function () {
 
-    $('.navbar-nav>li>a').on('click', function(){
+    new ClipboardJS('.btn');
+
+    $('.navbar-nav>li>a').on('click', function () {
         $('.navbar-collapse').collapse('hide');
     });
 
