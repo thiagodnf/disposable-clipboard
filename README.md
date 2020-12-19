@@ -32,12 +32,6 @@ Finally, access the address at your web browser:
 
 ## For Developers
 
-To install the this project in your machine, please install all dependencies by using the following command:
-
-```sh
-npm install
-```
-
 To run this project, run the following command:
 
 ```sh
