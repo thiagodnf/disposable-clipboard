@@ -15,8 +15,6 @@ db.defaults({
 
 exports.removeExpired = function () {
 
-    console.log("Removing expired clipboards");
-
     const clipboards = db.get('clipboards').value();
 
     clipboards.forEach(clipboard => {
