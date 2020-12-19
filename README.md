@@ -8,6 +8,22 @@ Web-based disposable clipboard tool that allows you to rapidly move texts betwee
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 
+## Usage
+
+Download this project in your machine, install all dependencies by using the following command:
+
+```
+npm install
+```
+
+To run this project, run the following command:
+
+npm start
+
+Now, access the following address at your web browser:
+
+> localhost:3000
+
 ## Screenshots
 
 ![Screen Shot 2020-12-19 at 12 20 08 AM](https://user-images.githubusercontent.com/114015/102681517-f9ae2380-418f-11eb-9081-a795bb679e9b.png)
