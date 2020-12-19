@@ -15,7 +15,10 @@ db.defaults({
 
 exports.removeExpired = function () {
 
-    const clipboards = db.get('clipboards').value();
+    const clipboards = db
+        .get('clipboards')
+        .filter({ method: "auto" })
+        .value();
 
     clipboards.forEach(clipboard => {
 
@@ -37,7 +40,8 @@ exports.save = function (content, expiration) {
         id: nanoid(10),
         content: content,
         expired_at: dateUtils.getExpiredAt(now, expiration,),
-        created_at: now
+        created_at: now,
+        method: expiration.method
     };
 
     db

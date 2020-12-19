@@ -48,6 +48,7 @@ exports.view = function(req, res, next) {
 
     res.render('clipboard.ejs', {
         content: validator.unescape(clipboard.content),
-        expiredAt: clipboard.expired_at
+        expiredAt: clipboard.expired_at,
+        method: clipboard.method
     });
 };
