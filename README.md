@@ -30,6 +30,9 @@ Finally, access the address at your web browser:
 
 ![Screen Shot 2020-12-19 at 12 20 08 AM](https://user-images.githubusercontent.com/114015/102681517-f9ae2380-418f-11eb-9081-a795bb679e9b.png)
 
+![Screen Shot 2020-12-19 at 12 29 34 AM](https://user-images.githubusercontent.com/114015/102681656-50682d00-4191-11eb-8d61-6786f02cbc15.png)
+
+
 ## For Developers
 
 To run this project, run the following command:
