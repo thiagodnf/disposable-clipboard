@@ -9,6 +9,7 @@ const createError = require('http-errors');
 
 const indexRoute = require("./src/routes/index.route");
 const clipboardRoute = require("./src/routes/clipboard.route");
+const package = require('./package.json');
 
 const PORT = process.env.PORT || 3000;
 
@@ -29,6 +30,10 @@ app.use(function(req, res, next){
     console.log(req.csrfToken())
     // Expose variable to templates via locals
     res.locals.csrftoken = req.csrfToken();
+    next();
+});
+app.use(function(req, res, next){
+    res.locals.package = package;
     next();
 });
 

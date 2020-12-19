@@ -1,18 +1,25 @@
 {
     "name": "disposable-clipboard",
     "version": "0.0.1",
-    "description": "",
-    "main": "index.js",
+    "description": "Web-based disposable clipboard tool that allows you to rapidly move texts between devices. Just type anything you want, define the expiration time, and share it",
+    "main": "server.js",
     "scripts": {
         "start": "node server.js",
         "dev": "nodemon --ignore 'db.json' server.js",
         "lint": "npx eslint .",
         "lint-fix": "npx eslint . --fix"
     },
-    "keywords": [],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/thiagodnf/disposable-clipboard"
+    },
+    "bugs": {
+        "url": "https://github.com/thiagodnf/disposable-clipboard/issues"
+    },
+    "keywords": ["clipboard", "disposable", "web-app"],
     "author": "Thiago Ferreira",
     "license": "MIT",
-    "homepage": "https://github.com/thiagodnf/disposable-clipboard",
+    "homepage": "https://disposable-clipboard.herokuapp.com",
     "devDependencies": {
         "nodemon": "^2.0.6"
     },
