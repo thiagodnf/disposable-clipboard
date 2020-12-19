@@ -1,7 +1,7 @@
 const createError = require('http-errors');
 const { body, param, validationResult } = require('express-validator');
 
-const clipboardService = require("../services/clipboard.service");
+const clipboardService = require('../services/clipboard.service');
 const dateUtils = require('../utils/date.utils');
 
 exports.create = [
@@ -59,4 +59,4 @@ exports.view = [
 
         next();
     },
-]
+];

@@ -1,14 +1,14 @@
 $(function () {
 
-    $(".countdown").each(function (event) {
+    $('.countdown').each(function (event) {
 
         const $this = $(this);
 
-        const method = $this.data("method");
-        const target = $this.data("target");
+        const method = $this.data('method');
+        const target = $this.data('target');
 
-        if (method == "manual") {
-            $this.parent().text("Expired");
+        if (method == 'manual') {
+            $this.parent().text('Expired');
         } else {
 
             const interval = setInterval(function () {
@@ -17,7 +17,7 @@ $(function () {
 
                 if (!time) {
 
-                    $this.parent().text("Expired");
+                    $this.parent().text('Expired');
 
                     window.clearInterval(interval);
                 }else{
@@ -54,4 +54,4 @@ $(function () {
             }
         }
     });
-})
+});

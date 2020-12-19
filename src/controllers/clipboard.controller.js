@@ -5,7 +5,7 @@ const url = require('url');
 const dateUtils = require('../utils/date.utils');
 const clipboardService = require("../services/clipboard.service");
 
-exports.create =  async function(req, res, next) {
+exports.create = function(req, res, next) {
 
     const {content, expirationTime } = req.body;
 
@@ -16,7 +16,7 @@ exports.create =  async function(req, res, next) {
     res.redirect(`/clipboard/success/${clipboard.id}`);
 };
 
-exports.success =  async function(req, res, next) {
+exports.success = async function(req, res, next) {
 
     const {clipboardId}  = req.params;
 

@@ -1,13 +1,13 @@
 const FileSync = require('lowdb/adapters/FileSync');
 const { customAlphabet } = require('nanoid');
-const low = require('lowdb')
+const low = require('lowdb');
 
 const dateUtils = require('../utils/date.utils');
 
 const alphabet = '1234567890abcdefghijlmnopqrstuvxzwykABCDEFGHIJLMNOPQRSTUVXZWYK';
 const nanoid = customAlphabet(alphabet, 10);
-const adapter = new FileSync('db.json')
-const db = low(adapter)
+const adapter = new FileSync('db.json');
+const db = low(adapter);
 
 db.defaults({
     clipboards: []
@@ -17,7 +17,7 @@ exports.removeExpired = function () {
 
     const clipboards = db
         .get('clipboards')
-        .filter({ method: "auto" })
+        .filter({ method: 'auto' })
         .value();
 
     clipboards.forEach(clipboard => {
@@ -26,11 +26,11 @@ exports.removeExpired = function () {
             this.removeById(clipboard.id);
         }
     });
-}
+};
 
 exports.findAll = function () {
     return db.get('clipboards').value();
-}
+};
 
 exports.save = function (content, expiration) {
 
@@ -39,7 +39,7 @@ exports.save = function (content, expiration) {
     const obj = {
         id: nanoid(10),
         content: content,
-        expired_at: dateUtils.getExpiredAt(now, expiration,),
+        expired_at: dateUtils.getExpiredAt(now, expiration),
         created_at: now,
         method: expiration.method
     };
