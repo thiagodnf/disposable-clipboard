@@ -1,4 +1,4 @@
-exports.expirationDates = {
+exports.expirationTimes = {
     "0sec": {label: "Expire when viewed", amount: 0, unit: "second", selected: "selected" },
     "30sec": {label: "Expire in 30 seconds", amount: 30, unit: "second", selected: "" },
     "1min": {label: "Expire in 1 minute", amount: 1, unit: "minute", selected: "" },

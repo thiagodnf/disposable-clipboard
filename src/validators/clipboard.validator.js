@@ -12,14 +12,14 @@ exports.create = [
         .withMessage('content may not be empty')
         .bail(),
 
-    body('expirationDate')
+    body('expirationTime')
         .trim()
         .escape()
         .not().isEmpty()
-        .withMessage('expiration date may not be empty')
+        .withMessage('expiration time may not be empty')
         .bail()
-        .isIn(Object.keys(dateUtils.expirationDates))
-        .withMessage('expiration date is not valid')
+        .isIn(Object.keys(dateUtils.expirationTimes))
+        .withMessage('expiration time is not valid')
         .bail(),
 
     (req, res, next) => {
@@ -41,9 +41,11 @@ exports.view = [
         .trim()
         .escape()
         .not().isEmpty()
-        .withMessage('content may not be empty')
+        .withMessage('clipboard id may not be empty')
         .bail()
         .isLength({ min: 10})
+        .withMessage('clipboard id is not valid')
+        .bail()
         ,
 
     (req, res, next) => {

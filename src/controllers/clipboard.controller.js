@@ -5,9 +5,9 @@ const url = require('url');
 
 exports.create =  async function(req, res, next) {
 
-    const {content, expirationDate } = req.body;
+    const {content, expirationTime } = req.body;
 
-    const expiration = dateUtils.expirationDates[expirationDate];
+    const expiration = dateUtils.expirationTimes[expirationTime];
 
     const clipboard = clipboardService.save(content, expiration);
 
@@ -27,10 +27,12 @@ exports.create =  async function(req, res, next) {
 
 exports.view = function(req, res, next) {
 
+    const {clipboardId} = req.params;
     //http://localhost:3000/KOfW7f7cRh
 
 
-    console.log(req.params)
+    console.log(clipboardId)
+
     res.render('clipboard.ejs',{
         clipboard: "oi"
     });

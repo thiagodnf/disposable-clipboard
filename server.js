@@ -27,8 +27,6 @@ app.set('views', path.join(__dirname, '/src/views/pages'))
 app.use(bodyParser.urlencoded({ extended: false, limit: '100mb' }));
 app.use(csrf({ cookie: true }));
 app.use(function(req, res, next){
-    console.log(req.csrfToken())
-    // Expose variable to templates via locals
     res.locals.csrftoken = req.csrfToken();
     next();
 });

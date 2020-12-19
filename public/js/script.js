@@ -14,8 +14,11 @@ $(function(){
                     return $.trim(value);
                 }
             },
-            expirationDate: {
-                required: true
+            expirationTime: {
+                required: true,
+                normalizer: function (value) {
+                    return $.trim(value);
+                }
             }
         }
     });
