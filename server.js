@@ -1,0 +1,77 @@
+const express = require('express');
+const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
+const morgan = require('morgan');
+const helmet = require('helmet');
+const csrf = require('csurf');
+const path = require('path')
+const createError = require('http-errors');
+
+const indexRoute = require("./src/routes/index.route");
+const clipboardRoute = require("./src/routes/clipboard.route");
+
+const PORT = process.env.PORT || 3000;
+
+const app = express();
+
+/**
+ * Settings
+ */
+
+// app.use(helmet({permittedCrossDomainPolicies: false}));
+app.use(cookieParser());
+app.use(morgan('dev'))
+app.use(express.static('public'));
+app.set('views', path.join(__dirname, '/src/views/pages'))
+app.use(bodyParser.urlencoded({ extended: false, limit: '100mb' }));
+app.use(csrf({ cookie: true }));
+app.use(function(req, res, next){
+    console.log(req.csrfToken())
+    // Expose variable to templates via locals
+    res.locals.csrftoken = req.csrfToken();
+    next();
+});
+
+/**
+ * Routes
+ */
+app.use('/', indexRoute);
+app.use('/clipboard', clipboardRoute);
+
+
+/**
+ * Catch 404 and forward to error handler
+ */
+app.use(function(req, res, next) {
+    next(createError(404));
+});
+
+/**
+ * Error handler
+ */
+app.use(function (err, req, res, next) {
+
+    // set locals, only providing error in development
+    res.locals.message = err.message;
+    res.locals.error = req.app.get('env') === 'development' ? err : {};
+
+    // render the error page
+    res.status(err.status || 500);
+    res.render('error.ejs',{
+        errorCode: err.status || 500,
+        errorMessage: err.message,
+        errorDetails: err.errors || "No details"
+    });
+});
+
+app.listen(PORT, () => {
+
+    console.log('Running on port: %d', PORT);
+
+    const sec = 1000;
+    const min = 60 * sec;
+
+    setInterval(function () {
+
+    }, 1 * min);
+});

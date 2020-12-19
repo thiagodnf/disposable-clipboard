@@ -1,0 +1,99 @@
+
+body{
+    background-color: #383a59;
+    margin-top: 80px;
+    font-family: 'Source Sans Pro';
+    color:#f2f2f2;
+}
+
+.navbar-dark-theme {
+    background-color: #282a36;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,.15);
+}
+/* change the brand and text color */
+.navbar-dark-theme .navbar-brand,
+.navbar-dark-theme .navbar-text {
+    color: #f2f2f2;
+}
+/* change the link color */
+.navbar-dark-theme .navbar-nav .nav-link {
+    color: rgba(255,255,255,.75);
+}
+/* change the color of active or hovered links */
+.navbar-dark-theme .nav-item.active .nav-link,
+.navbar-dark-theme .nav-item:hover .nav-link {
+    color: #ff79c6;
+}
+
+.navbar-toggler{
+    color: #ff79c6;
+}
+
+.display-1{
+    font-size: 10em;
+}
+
+.display-4{
+    font-size: 3em;
+}
+
+.bg-default{
+    background-color: #383a59;
+}
+
+.bg-background{
+    background-color: #282a36;
+}
+
+.text-pink{
+    color: #ff79c6;
+}
+
+.text-foreground{
+    color: #f8f8f2;
+}
+
+a.text-pink:hover{
+    color: rgba(255,121,198,.7);
+    text-decoration: none;
+}
+
+a.text-cyan:hover{
+    color: rgba(139,233,253,.7);
+    text-decoration: none;
+}
+
+.text-cyan {
+    color: #8be9fd
+}
+
+.btn-success {
+    background-color: #50fa7b;
+    border-color: #50fa7b;
+    color: #000;
+    border-radius: 4px;
+}
+
+.btn-success:hover {
+    color: #000;
+    border-color: rgba(80,250,123,.8);
+    background: rgba(80,250,123,.8);
+}
+
+textarea{
+    color: white !important;
+    border-color: black !important;
+    background-color: #282a36 !important ;
+}
+
+::selection {
+    background: #ff79c6;
+}
+
+.modal-content{
+    background-color: #282a36;
+}
+
+.modal-footer {
+    border-color: #383a59;
+}

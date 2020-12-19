@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head'); %>
+
+<body>
+
+    <%- include('../partials/navbar'); %>
+
+    <div class="container-fluid">
+        <div class="text-center">
+            <h2>QRCode for this clipboard:</h2>
+            <img class="mt-4" src="<%= qrcode %>">
+            <h2 class="mt-5">or access: </h2>
+            <div class="row mt-4">
+                <div class="col-lg-3"></div>
+                <div class="col-lg-6">
+                    <div class="card card-body bg-background">
+                        <code class="text-foreground">
+                            <%= clipboardURL %>
+                        </code>
+                    </div>
+                </div>
+                <div class="col-lg-3"></div>
+            </div>
+            <h4 class="mt-5 mb-5"><a class="text-cyan" href="/">Back to Home</a></h4>
+
+        </div>
+    </div>
+
+    <%- include('../partials/footer'); %>
+
+</body>
+
+</html>
