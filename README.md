@@ -1,10 +1,16 @@
 <img src="https://user-images.githubusercontent.com/114015/102681443-696fde80-418f-11eb-8863-0e668e240b40.png" width="400px">
 
+Web-based disposable clipboard tool that allows you to rapidly move texts between devices. Just type anything you want, define the expiration time, and share it
+
 [![GitHub Release](https://img.shields.io/github/release/thiagodnf/disposable-clipboard.svg)](https://github.com/thiagodnf/disposable-clipboard/releases/latest)
 [![GitHub contributors](https://img.shields.io/github/contributors/thiagodnf/disposable-clipboard.svg)](https://github.com/thiagodnf/disposable-clipboard/graphs/contributors)
 [![GitHub stars](https://img.shields.io/github/stars/thiagodnf/disposable-clipboard.svg)](https://github.com/almende/thiagodnf/disposable-clipboard)
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
+
+## Screenshots
+
+![Screen Shot 2020-12-19 at 12 20 08 AM](https://user-images.githubusercontent.com/114015/102681517-f9ae2380-418f-11eb-9081-a795bb679e9b.png)
 
 ## For Developers
 
