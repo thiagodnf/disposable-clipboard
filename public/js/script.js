@@ -18,17 +18,15 @@ $(function () {
                 if (!time) {
 
                     $this.parent().text("Expired");
+
                     window.clearInterval(interval);
-
+                }else{
+                    $this.text(time);
                 }
-
-                $this.text(time);
 
             }, 1000);
         }
     });
-
-
 
     console.log(countdown(new Date(2000, 0, 1), new Date(2000, 0, 1)).toString());
 
