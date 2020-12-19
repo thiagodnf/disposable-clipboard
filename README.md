@@ -10,19 +10,21 @@ Web-based disposable clipboard tool that allows you to rapidly move texts betwee
 
 ## Usage
 
-Download this project in your machine, install all dependencies by using the following command:
+Download this project in your machine and install all dependencies by using the following command:
 
 ```
 npm install
 ```
 
-To run this project, run the following command:
+Now you can start the app. Please, run the following command:
 
+```
 npm start
+```
 
-Now, access the following address at your web browser:
+Finally, access the address at your web browser:
 
-> localhost:3000
+> http://localhost:3000
 
 ## Screenshots
 
